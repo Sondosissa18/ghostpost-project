@@ -1,0 +1,13 @@
+<a href="{% url 'homepage' %}">Home</a> | <a href="{% url 'sortbyvotes' %}">Sort_by_Votes</a>| <button><a href="{% url 'boast' %}">Boasts</a></button> | <button><a href="{% url 'roast' %}">Roasts</a></button> | <a href="{% url 'createpost' %}">Create Post</a>
+
+
+<div class="form-group">
+    <form method="post" action="" >
+    
+        {% csrf_token %} <br>{{ form }}
+        <br>
+        <br>
+        <input type="submit" class="btn btn-success" value="Submit" />
+</div>
+</form>
+

@@ -1,0 +1,20 @@
+<a href="{% url 'homepage' %}">Home</a> | <a href="{% url 'sortbyvotes' %}">Sort_by_Votes</a>| <button><a href="{% url 'boast' %}">Boasts</a></button> | <button><a href="{% url 'roast' %}">Roasts</a></button> | <a href="{% url 'createpost' %}">Create Post</a>
+
+
+{% for post in posts %}
+
+<ul>
+{% if post.ghostpost is True %}
+  <strong><p>Boast</p></strong>
+{% else %}
+  <strong><p>Roast</p></strong>
+{% endif %}
+  <strong><li>{{ post.text }}</li></strong>
+  <a href="/like/{{post.id}}/">UPVOTE</a>  <a href="/dislike/{{post.id}}/">DOWNVOTE</a>
+  <strong><li>{{ post.upvote }}</li></strong>
+  <strong><li>{{ post.downvote }}</li></strong>
+  <strong><li>{{ post.created_at }}</li></strong>
+</ul>
+{% endfor %}
+
+
